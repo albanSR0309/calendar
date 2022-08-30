@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import {Input} from "../../shared/components/Input";
 import {useForm} from "../../shared/hooks/UserForm";
 import {v4 as uuidv4} from 'uuid';
-import {useUserContext} from "../../userContetxt";
 import {useWorkspaceContext} from "../../workspaceContext";
+import {Button} from "../../shared/components/Button";
 
 type Props = {
   viewModal: any
@@ -28,8 +28,8 @@ export const AppointmentCreatorModal = ({
     name: '',
     description: '',
     workspaceId: selectedWorkspace,
-    startAt: selectedDay.set('hour', 8).format('YYYY-MM-DDTHH:mm'),
-    endAt: selectedDay.set('hour', 8).format('YYYY-MM-DDTHH:mm')
+    startAt: selectedEvent ? selectedEvent.startAt : selectedDay.set('hour', 8).format('YYYY-MM-DDTHH:mm'),
+    endAt: selectedEvent ? selectedEvent.endAt : selectedDay.set('hour', 8).format('YYYY-MM-DDTHH:mm'),
   }
 
   const {inputs, setInputs, handleInputChange} = useForm(initialInputs)
@@ -55,7 +55,6 @@ export const AppointmentCreatorModal = ({
   }, [inputs.startAt]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    console.log(inputs)
     e.preventDefault()
     setAppointments(inputs)
     viewModal(false)
@@ -68,6 +67,7 @@ export const AppointmentCreatorModal = ({
 
   return (
     <div className="modal">
+      <div className="modal-close" onClick={() => viewModal(false)}><Button styles="button-inverted" ariaLabel="close" /></div>
       <div className="modal-content container-md">
         <strong>{!selectedEvent ? 'New' : 'Edit'} Appointment.</strong>
         <div>Please {!selectedEvent ? 'enter' : 'edit'} your appointment data</div>
@@ -107,7 +107,7 @@ export const AppointmentCreatorModal = ({
             rows={3}/>
           <button type="submit" className="button button-primary">Save Appointment</button>
         </form>
-        <small>You want to Delete this appointment? <span onClick={() => handlerRemoveAppointment()}>Delete here</span></small>
+        <small>You want to Delete this appointment? <span className="text-pointer" onClick={() => handlerRemoveAppointment()}>Delete here</span></small>
       </div>
     </div>
   );

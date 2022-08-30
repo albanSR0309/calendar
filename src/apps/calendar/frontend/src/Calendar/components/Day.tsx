@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import dayjs from "dayjs";
 
 export default function Day({monthId, day, handlerAppointmentCreator, appointments}: any) {
@@ -21,15 +21,19 @@ export default function Day({monthId, day, handlerAppointmentCreator, appointmen
     return 'day'
   }
 
+
   return (
     <div className={`${getDayOfMonthClass()}`}>
       <div className="day-number" onClick={() => handlerAppointmentCreator(day)}>
         <div>{day.format("DD")}</div>
       </div>
-      <div>
+      <div className="day-appointments">
         {dayEvents?.map((evt: any, idx) => (
-          <div className="appointments" key={idx} onClick={() => handlerAppointmentCreator(day, evt)}>
-            <div className="appointments-name">{evt.name}</div>
+          <div className="appointments"
+               key={idx}
+               onClick={() => handlerAppointmentCreator(day, evt)}
+          >
+            <div className="appointments-name">{evt.name.length > 16 ? `${evt.name.substring(0, 16)}...` : evt.name}</div>
             <div className="appointments-date">
               {dayjs(evt.startAt).format("HH:mm")}
               -
@@ -37,6 +41,7 @@ export default function Day({monthId, day, handlerAppointmentCreator, appointmen
             </div>
           </div>
         ))}
+        <div className="day-new-appointment" onClick={() => handlerAppointmentCreator(day)}/>
       </div>
     </div>
   );

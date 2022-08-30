@@ -1,22 +1,26 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Card} from "../../shared/components/Card";
 
 type Props = {
   appointments: Array<object>;
+  emptyDataMessage: string;
+  onClick: any;
 };
 
-export const AppointmentsList = ({appointments}: Props): JSX.Element => {
+export const AppointmentsList = ({appointments, emptyDataMessage, onClick}: Props): JSX.Element => {
 
   return (
-    <Fragment>
-      {appointments && appointments.map((event: any) => (
+    <div className="cards-list">
+      {!appointments?.length && emptyDataMessage && <p>{emptyDataMessage}</p>}
+      {appointments && appointments.map((appointment: any) => (
         <Card
-          name={event.name}
-          description={event.description}
-          startAt={event.startAt}
-          endAt={event.endAt}
+          name={appointment.name}
+          description={appointment.description}
+          startAt={appointment.startAt}
+          endAt={appointment.endAt}
+          onClick={() => onClick(appointment)}
         />
       ))}
-    </Fragment>
+    </div>
   );
 };

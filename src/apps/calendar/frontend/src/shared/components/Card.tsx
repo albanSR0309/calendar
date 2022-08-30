@@ -6,11 +6,12 @@ type Props = {
   description: string;
   startAt: string;
   endAt: string;
+  onClick: any;
 };
 
-export const Card = ({name, description, startAt, endAt}: Props): JSX.Element => {
+export const Card = ({name, description, startAt, endAt, onClick}: Props): JSX.Element => {
   return (
-    <div className="card">
+    <div className="card" onClick={() => onClick()}>
       <div className="card-date"><div className="card-type"/>
         {dayjs(startAt).format("HH:mm")}
         -

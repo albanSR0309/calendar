@@ -1,6 +1,12 @@
 /* ==========================================================================
    #TEXT-UTILITIES
    ========================================================================== */
+.text-pointer {
+  cursor: pointer;
+  font-weight: 500;
+  color: $color-primary;
+  text-decoration: underline;
+}
 
 .u-text-upper {
   text-transform: uppercase !important;

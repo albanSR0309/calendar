@@ -6,9 +6,15 @@
   background: #c5c4c347;
   backdrop-filter: blur(3px);
   top: 0;
+  right: 0;
   @include flex-align--center-justify-beetwen();
   &-content {
     background: white;
     border-radius: 6px;
+  }
+  &-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
   }
 }

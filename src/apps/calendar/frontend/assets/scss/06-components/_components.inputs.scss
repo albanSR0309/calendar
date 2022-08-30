@@ -4,6 +4,13 @@
   background-color: #fff;
   padding: 0.75em 1em;
   margin-bottom: 1rem;
+  &-inv {
+    background: transparent;
+    border: none;
+  }
+  &-inv:focus {
+    outline: none;
+  }
 }
 .input:focus {
   outline-color: $color-secondary

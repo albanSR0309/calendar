@@ -1,5 +1,11 @@
 .navbar {
   @include flex-align--center();
+
+  &-container {
+    @include flex-align--center-justify-beetwen();
+    flex-direction: row;
+  }
+
   &-link {
     cursor: pointer;
     @include flex-align--center();
@@ -7,6 +13,7 @@
     text-decoration: none;
     color: $color-secondary;
   }
+
   &-avatar {
     @include flex-align--center();
     width: 38px;
@@ -14,6 +21,7 @@
     border-radius: 50px;
     margin-right: 0.5rem;
   }
+
   .active {
     color: $color-primary;
   }

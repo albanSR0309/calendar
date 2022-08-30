@@ -14,7 +14,7 @@
 .month-calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 200px);
+  grid-template-rows: repeat(5, minmax(12.5rem,1fr));
   grid-gap: 0.4rem;
 
   &-header {
@@ -49,6 +49,7 @@
     padding: 0.4rem;
   }
 
+
   &-today {
     border: 2px solid #fc9082;
     box-shadow: 5px 8px 20px #fc90821c;
@@ -62,6 +63,14 @@
   &-other-month {
     background: #cccccc45;
     opacity: 0.6;
+  }
+  &-appointments {
+    @include flex();
+    flex-direction: column;
+    height: 100%;
+  }
+  &-new-appointment {
+    flex: 1;
   }
 }
 

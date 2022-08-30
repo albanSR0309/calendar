@@ -27,6 +27,12 @@
 }
 
 
+.cards {
+  &-list {
+    margin-top: 2rem;
+  }
+}
+
 .card {
   cursor: pointer;
   background: #fff;
