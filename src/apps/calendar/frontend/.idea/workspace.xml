@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7a1dbf2-2f55-4eeb-b0f7-649b3c4f6bee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/05-objects/_objects.container.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/05-objects/_objects.container.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/06-components/_components.calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/06-components/_components.calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/06-components/_components.card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/06-components/_components.card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/06-components/_components.inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/06-components/_components.inputs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/06-components/_components.modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/06-components/_components.modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/06-components/_components.navBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/06-components/_components.navBar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/99-utilities/_utilities.text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/99-utilities/_utilities.text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Appointments/components/AppointmentCreatorModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appointments/components/AppointmentCreatorModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Appointments/components/AppointmentsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appointments/components/AppointmentsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Appointments/components/AppointmentsSummary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appointments/components/AppointmentsSummary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calendar/components/Day.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calendar/components/Day.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/components/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="d7a1dbf2-2f55-4eeb-b0f7-649b3c4f6bee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +59,7 @@
       <workItem from="1661457255416" duration="623000" />
       <workItem from="1661488853499" duration="9360000" />
       <workItem from="1661576687099" duration="558000" />
-      <workItem from="1661781831246" duration="28560000" />
+      <workItem from="1661781831246" duration="28693000" />
     </task>
     <servers />
   </component>
