@@ -15,7 +15,7 @@ export const Home = (): JSX.Element => {
     <Fragment>
       <Hero
         title="Take complete control of your personal time."
-        caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, velit!"
+        caption="A simple calendar with workspaces to share appointments with other users"
         ariaLabel="Get started"
         href="/calendar"
       />
