@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.tmp
+logs/
+src/Contexts/Calendar/Appointments/infrastructure/persistence/events.*
+data
+test-results.xml

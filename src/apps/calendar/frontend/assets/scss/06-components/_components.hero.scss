@@ -1,0 +1,14 @@
+.hero {
+  &-container {
+    @include flex-align--center-justify-center();
+    flex-direction: column;
+    text-align: center;
+    height: calc(100vh - 70px);
+  }
+  &-ss {
+    text-transform: uppercase;
+    background: linear-gradient(275.79deg,#fbca66,#55cefa ,#745de5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

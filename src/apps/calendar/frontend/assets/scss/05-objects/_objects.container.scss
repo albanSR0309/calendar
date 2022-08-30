@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #CONTAINER-OBJECT
+   ========================================================================== */
+@mixin container() {
+  @include flex();
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  padding: 0.8rem;
+}
+.container {
+  @include container();
+  max-width: 900px;
+  &-xs {
+    @include container();
+    max-width: 300px;
+  }
+  &-md {
+    @include container();
+    max-width: 490px;
+  }
+  &-xl {
+    @include container();
+    max-width: 1290px;
+  }
+}

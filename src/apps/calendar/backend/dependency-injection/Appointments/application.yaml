@@ -1,0 +1,45 @@
+services:
+
+  Calendar.appointments.AppointmentRepository:
+    class: ../../../../../Contexts/Calendar/Appointments/infrastructure/persistence/MongoAppointmentRepository
+    arguments: ['@Shared.ConnectionManager']
+
+  Calendar.appointments.AppointmentCreator:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Creator/AppointmentCreator
+    arguments: ['@Calendar.appointments.AppointmentRepository', '@Shared.EventBus']
+
+  Calendar.appointments.CreateAppointmentCommandHandler:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Creator/CreateAppointmentCommandHandler
+    arguments: ['@Calendar.appointments.AppointmentCreator']
+    tags:
+      - { name: 'commandHandler' }
+
+  Calendar.appointments.AppointmentFinder:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Finder/AppointmentFinder
+    arguments: ["@Calendar.appointments.AppointmentRepository"]
+
+  Calendar.appointments.FindAppointmentQueryHandler:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Finder/FindAppointmentQueryHandler
+    arguments: ["@Calendar.appointments.AppointmentFinder"]
+    tags:
+      - { name: 'queryHandler' }
+
+  Calendar.appointments.AppointmentRemover:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Remover/AppointmentRemover
+    arguments: [ "@Calendar.appointments.AppointmentRepository" ]
+
+  Calendar.appointments.RemoveAppointmentQueryHandler:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Remover/RemoveAppointmentQueryHandler
+    arguments: [ "@Calendar.appointments.AppointmentRemover" ]
+    tags:
+      - { name: 'queryHandler' }
+
+  Calendar.appointments.AppointmentsSearcher:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Searcher/AppointmentsSearcher
+    arguments: [ "@Calendar.appointments.AppointmentRepository" ]
+
+  Calendar.appointments.SearchAppointmentQueryHandler:
+    class: ../../../../../Contexts/Calendar/Appointments/application/Searcher/SearchAppointmentQueryHandler
+    arguments: [ "@Calendar.appointments.AppointmentsSearcher" ]
+    tags:
+      - { name: 'queryHandler' }

@@ -1,0 +1,35 @@
+services:
+
+  Calendar.users.UserRepository:
+    class: ../../../../../Contexts/Calendar/Users/infrastructure/persistence/MongoUserRepository
+    arguments: ['@Shared.ConnectionManager']
+
+  Calendar.users.UserCreator:
+    class: ../../../../../Contexts/Calendar/Users/application/Creator/UserCreator
+    arguments: ['@Calendar.users.UserRepository', '@Shared.EventBus']
+
+  Calendar.users.CreateUserCommandHandler:
+    class: ../../../../../Contexts/Calendar/Users/application/Creator/CreateUserCommandHandler
+    arguments: ['@Calendar.users.UserCreator']
+    tags:
+      - { name: 'commandHandler' }
+
+  Calendar.users.UserFinder:
+    class: ../../../../../Contexts/Calendar/Users/application/Finder/UserFinder
+    arguments: ["@Calendar.users.UserRepository"]
+
+  Calendar.users.FindUserQueryHandler:
+    class: ../../../../../Contexts/Calendar/Users/application/Finder/FindUserQueryHandler
+    arguments: ["@Calendar.users.UserFinder"]
+    tags:
+      - { name: 'queryHandler' }
+
+  Calendar.users.UserAuthenticator:
+    class: ../../../../../Contexts/Calendar/Users/application/Authenticator/UserAuthenticator
+    arguments: [ "@Calendar.users.UserRepository" ]
+
+  Calendar.users.AuthenticateUserQueryHandler:
+    class: ../../../../../Contexts/Calendar/Users/application/Authenticator/AuthenticateUserQueryHandler
+    arguments: [ "@Calendar.users.UserAuthenticator" ]
+    tags:
+      - { name: 'queryHandler' }

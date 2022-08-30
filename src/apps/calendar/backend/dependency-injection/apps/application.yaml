@@ -1,0 +1,41 @@
+services:
+
+  Apps.calendar.controllers.AppointmentPutController:
+    class: ../../controllers/Appointments/AppointmentPutController
+    arguments: ["@Shared.CommandBus"]
+
+  Apps.calendar.controllers.AppointmentGetController:
+    class: ../../controllers/Appointments/AppointmentGetController
+    arguments: [ "@Shared.QueryBus" ]
+
+  Apps.calendar.controllers.AppointmentDeleteController:
+    class: ../../controllers/Appointments/AppointmentDeleteController
+    arguments: [ "@Shared.QueryBus" ]
+
+  Apps.calendar.controllers.AppointmentsGetController:
+    class: ../../controllers/Appointments/AppointmentsGetController
+    arguments: [ "@Shared.QueryBus" ]
+
+  Apps.calendar.controllers.UserPutController:
+    class: ../../controllers/Users/UserPutController
+    arguments: [ "@Shared.CommandBus" ]
+
+  Apps.calendar.controllers.UserGetController:
+    class: ../../controllers/Users/UserGetController
+    arguments: [ "@Shared.QueryBus" ]
+
+  Apps.calendar.controllers.UserPostController:
+    class: ../../controllers/Users/UserPostController
+    arguments: [ "@Shared.QueryBus" ]
+
+  Apps.calendar.controllers.WorkspacePutController:
+    class: ../../controllers/Workspaces/WorkspacePutController
+    arguments: [ "@Shared.CommandBus" ]
+
+  Apps.calendar.controllers.WorkspacesGetController:
+    class: ../../controllers/Workspaces/WorkspacesGetController
+    arguments: [ "@Shared.QueryBus" ]
+
+  Apps.calendar.controllers.StatusGetController:
+    class: ../../controllers/StatusGetController
+    arguments: []

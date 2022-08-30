@@ -1,0 +1,5 @@
+.authentication {
+  @include flex-align--center-justify-center();
+  flex-direction: column;
+  min-height: calc(90vh - 5rem);
+}

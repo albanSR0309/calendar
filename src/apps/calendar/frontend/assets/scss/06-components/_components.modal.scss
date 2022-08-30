@@ -1,0 +1,14 @@
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background: #c5c4c347;
+  backdrop-filter: blur(3px);
+  top: 0;
+  @include flex-align--center-justify-beetwen();
+  &-content {
+    background: white;
+    border-radius: 6px;
+  }
+}

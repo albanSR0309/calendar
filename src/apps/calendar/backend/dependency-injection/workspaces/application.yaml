@@ -1,0 +1,30 @@
+services:
+  Calendar.workspaces.WorkspaceRepository:
+    class: ../../../../../Contexts/Calendar/Workspaces/infrastructure/persistence/mongo/MongoWorkspaceRepository
+    arguments: ["@Shared.ConnectionManager"]
+
+  Calendar.workspaces.WorkspaceCreator:
+    class: ../../../../../Contexts/Calendar/Workspaces/application/Creator/WorkspaceCreator
+    arguments: [ '@Calendar.workspaces.WorkspaceRepository', '@Shared.EventBus' ]
+
+  Calendar.workspaces.CreateWorkspaceCommandHandler:
+    class: ../../../../../Contexts/Calendar/Workspaces/application/Creator/CreateWorkspaceCommandHandler
+    arguments: [ '@Calendar.workspaces.WorkspaceCreator' ]
+    tags:
+      - { name: 'commandHandler' }
+
+  Calendar.workspaces.CreateWorkspaceOnUserCreated:
+    class: ../../../../../Contexts/Calendar/Workspaces/application/Creator/CreateWorkspaceOnUserCreated
+    arguments: ["@Calendar.workspaces.WorkspaceCreator"]
+    tags:
+      - { name: 'domainEventSubscriber' }
+
+  Calendar.workspaces.WorkspacesSearcher:
+    class: ../../../../../Contexts/Calendar/Workspaces/application/Searcher/WorkspacesSearcher
+    arguments: [ "@Calendar.workspaces.WorkspaceRepository" ]
+
+  Calendar.workspaces.SearchWorkspaceQueryHandler:
+    class: ../../../../../Contexts/Calendar/Workspaces/application/Searcher/SearchWorkspaceQueryHandler
+    arguments: [ "@Calendar.workspaces.WorkspacesSearcher" ]
+    tags:
+      - { name: 'queryHandler' }

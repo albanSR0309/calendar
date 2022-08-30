@@ -1,0 +1,85 @@
+.calendar {
+  &-header {
+    @include flex-align--center();
+  }
+  &-controls {
+    @include flex-align--center();
+    margin-right: 1rem;
+  }
+  &-month {
+    font-size: 1.8rem;
+  }
+}
+
+.month-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 200px);
+  grid-gap: 0.4rem;
+
+  &-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.4rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: $color-bg;
+    z-index: 2;
+    min-height: 3.8rem;
+    align-items: center;
+  }
+}
+
+.day {
+  cursor: pointer;
+  background: white;
+  border-radius: 8px;
+  padding: 0.4rem;
+  transition: 0.6s;
+  border: 1px solid #e1e4e8;
+  @include on-event(){
+    box-shadow: 5px 8px 20px #fc908270;
+  }
+
+  &-number {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #164951d6;
+    padding: 0.4rem;
+  }
+
+  &-today {
+    border: 2px solid #fc9082;
+    box-shadow: 5px 8px 20px #fc90821c;
+  }
+
+  &-passed {
+    border: 1px solid #e1e4e8;
+    opacity: 0.6;
+  }
+
+  &-other-month {
+    background: #cccccc45;
+    opacity: 0.6;
+  }
+}
+
+.appointments {
+  background: #16495117;
+  padding: 0.4rem;
+  border-radius: 4px;
+  color: #164951;
+  margin-top: 0.4rem;
+
+  &-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  &-date {
+    color: #8c9e9e;
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+}

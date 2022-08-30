@@ -1,0 +1,20 @@
+.navbar {
+  @include flex-align--center();
+  &-link {
+    cursor: pointer;
+    @include flex-align--center();
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: $color-secondary;
+  }
+  &-avatar {
+    @include flex-align--center();
+    width: 38px;
+    height: 38px;
+    border-radius: 50px;
+    margin-right: 0.5rem;
+  }
+  .active {
+    color: $color-primary;
+  }
+}

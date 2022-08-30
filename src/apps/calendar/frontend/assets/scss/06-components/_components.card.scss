@@ -1,0 +1,63 @@
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.card {
+  cursor: pointer;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 5px 8px 20px #fc90821c;
+  -webkit-animation: fadeInUp 0.6s;
+  animation: fadeInUp 0.6s;
+  transition: 0.6s;
+
+  @include on-event {
+    box-shadow: 4px 7px 8px #fc908224;
+  }
+
+  &-type {
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #AA6F9A;
+    border-radius: 50px;
+    margin-right: 0.5rem;
+  }
+
+  &-date {
+    @include flex-align--center();
+    color: #ccc;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  &-title {
+    font-size: 1.1rem;
+  }
+}

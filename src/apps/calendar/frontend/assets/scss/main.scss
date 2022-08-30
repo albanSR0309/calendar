@@ -1,0 +1,50 @@
+// ITCSS Skeleton - structure
+
+// 01. Settings
+@import '01-settings/settings.colors';
+@import '01-settings/settings.breakpoints';
+@import '01-settings/settings.typography';
+@import '01-settings/settings.spacing';
+@import '01-settings/settings.animations';
+@import '01-settings/settings.z-layers';
+
+// 02. Tools
+@import '02-tools/tools.mq';
+@import '02-tools/tools.flexbox';
+@import '02-tools/tools.on-event';
+@import '02-tools/tools.placeholder';
+@import '02-tools/tools.spacing';
+@import '02-tools/tools.animations';
+
+// 03. Generic
+@import '03-generic/generic.normalize';
+@import '03-generic/generic.selection';
+
+// 04. Elements
+@import '04-elements/elements.all';
+@import '04-elements/elements.body';
+@import '04-elements/elements.form';
+@import '04-elements/elements.header';
+@import '04-elements/elements.headings';
+@import '04-elements/elements.html';
+@import '04-elements/elements.links';
+
+// 05. Objects
+@import '05-objects/objects.container';
+@import '05-objects/objects.wrapper';
+@import '05-objects/objects.modal';
+
+// 06. Components
+@import '06-components/components.hero';
+@import '06-components/components.navbar';
+@import '06-components/components.modal';
+@import '06-components/components.alert';
+@import '06-components/components.button';
+@import '06-components/components.authentication';
+@import '06-components/components.inputs';
+@import '06-components/components.card';
+@import '06-components/components.calendar';
+
+// 99. Utilities
+@import '99-utilities/utilities.text';
+@import '99-utilities/utilities.visibility';
