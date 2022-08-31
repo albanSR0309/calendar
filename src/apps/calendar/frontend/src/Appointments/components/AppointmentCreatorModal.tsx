@@ -52,7 +52,8 @@ export const AppointmentCreatorModal = ({
       startAt: inputs.startAt,
       endAt: inputs.startAt
     })
-  }, [inputs.startAt, selectedEvent, setInputs, inputs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputs.startAt, selectedEvent, setInputs]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

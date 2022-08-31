@@ -9,6 +9,7 @@ export const useAuthentication = () => {
   const userAuthentication = async (inputs: object): Promise<void> => {
     try {
       const response = await UserAuthenticator(inputs)
+      console.log(response.data)
       setUser(response.data)
       window.sessionStorage.setItem('auth', JSON.stringify(response.data))
     } catch (e) {
