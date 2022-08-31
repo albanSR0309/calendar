@@ -3,10 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="d7a1dbf2-2f55-4eeb-b0f7-649b3c4f6bee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Contexts/Calendar/Shared/infrastructure/config/production.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Contexts/Calendar/Shared/infrastructure/config/production.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Contexts/Calendar/Users/application/Creator/UserCreator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Contexts/Calendar/Users/application/Creator/UserCreator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/dependency-injection/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/dependency-injection/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../tsconfig.prod.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../tsconfig.prod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/01-settings/_settings.colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/01-settings/_settings.colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/04-elements/_elements.header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/04-elements/_elements.header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/99-utilities/_utilities.text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/99-utilities/_utilities.text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Appointments/components/AppointmentCreatorModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appointments/components/AppointmentCreatorModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Appointments/components/AppointmentsSummary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appointments/components/AppointmentsSummary.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Appointments/repositories/AppointmentsRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appointments/repositories/AppointmentsRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Appointments/useAppointments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appointments/useAppointments.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppointmentsContext.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home/components/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/components/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Users/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/components/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Users/components/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/components/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Users/repositories/UserRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/repositories/UserRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Users/useAuthentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/useAuthentication.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Users/useUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users/useUser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Workspaces/repositories/WorkspaceRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Workspaces/repositories/WorkspaceRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Workspaces/useWorkspaces.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Workspaces/useWorkspaces.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/Brand.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Brand.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userContetxt.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/workspaceContext.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +59,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "settings.editor.selected.configurable": "editing.templates",
-    "ts.external.directory.path": "C:\\Users\\alban\\source\\calendar\\src\\apps\\calendar\\frontend\\node_modules\\typescript\\lib"
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.1.4\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
   }
 }]]></component>
   <component name="RecentsManager">

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {useForm} from "../../shared/hooks/UserForm";
-import {useUserContext} from "../../userContetxt";
+import {useUser} from "../../Users/useUser";
 import {useAuthentication} from "../useAuthentication";
 import {Section} from "../../shared/components/Section";
 import {Form} from "../../shared/components/Form";
@@ -15,7 +15,7 @@ const LOGIN_FORM_INPUTS = [
 
 export const Login = (): JSX.Element => {
   const {inputs, setInputs, handleInputChange} = useForm(INITIAL_INPUTS)
-  const {isLogged}: any = useUserContext()
+  const {isLogged}: any = useUser()
   const {userAuthentication} = useAuthentication()
   const navigate = useNavigate()
 

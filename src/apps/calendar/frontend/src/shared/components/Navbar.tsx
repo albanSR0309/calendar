@@ -9,16 +9,12 @@ export const Navbar = (): JSX.Element => {
   const {user, isLogged}: any = useUser()
   const {userLogout} = useAuthentication()
   const navigate = useNavigate()
-  const {workspaces, selectedWorkspace, setSelectedWorkspace}: any = useWorkspaces()
 
   const handlerLogout = () => {
     userLogout()
     navigate('/')
   }
 
-  const handlerWorkspaceChange = (e: any) => {
-    setSelectedWorkspace(e.target.value)
-  }
 
   return (
     <header>
@@ -27,13 +23,7 @@ export const Navbar = (): JSX.Element => {
           <Brand/>
           <NavLink to="./summary" className="navbar-link">Summary</NavLink>
           <NavLink to="./calendar" className="navbar-link">Calendar</NavLink>
-          {isLogged && <div className="navbar-link">Workspace: &nbsp;
-            <select className="input-inv" name="workspace" id="workspace" onChange={(e) => handlerWorkspaceChange(e)}>
-              {selectedWorkspace && workspaces?.map((workspace: any, idx: any) => (
-                <option value={workspace.id} selected={selectedWorkspace.id === workspace.id}>{workspace.name}</option>
-              ))}
-            </select>
-            <span>{selectedWorkspace?.name}</span></div>}
+          {isLogged && <Workspaces/>}
         </div>
         <nav className="navbar">
           {/* isLogged && <button className="button button-primary navbar-link">Add New Appointment</button> */}
@@ -61,3 +51,18 @@ const Avatar = ({handlerLogout}: any) => {
   )
 }
 
+const Workspaces = (): any => {
+  const {workspaces, selectedWorkspace, setSelectedWorkspace}: any = useWorkspaces()
+  const handlerWorkspaceChange = (e: any) => {
+    setSelectedWorkspace(e.target.value)
+  }
+  return (
+    <div className="navbar-link">Workspace: &nbsp;
+      <select className="input-inv" name="workspace" id="workspace" onChange={(e) => handlerWorkspaceChange(e)}>
+        {selectedWorkspace && workspaces?.map((workspace: any, idx: any) => (
+          <option key={idx} value={workspace.id} selected={selectedWorkspace.id === workspace.id}>{workspace.name}</option>
+        ))}
+      </select>
+      <span>{selectedWorkspace?.name}</span></div>
+  )
+}

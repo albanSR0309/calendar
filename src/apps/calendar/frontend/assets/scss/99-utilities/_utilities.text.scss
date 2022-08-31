@@ -8,6 +8,12 @@
   text-decoration: underline;
 }
 
+.text-error {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: $color-danger;
+}
+
 .u-text-upper {
   text-transform: uppercase !important;
 }

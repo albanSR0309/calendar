@@ -1,10 +1,10 @@
 import React, {Fragment, useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 import {Hero} from "../../shared/components/Hero";
-import {useUserContext} from "../../userContetxt";
+import {useUser} from "../../Users/useUser";
 
 export const Home = (): JSX.Element => {
-  const {isLogged}: any = useUserContext()
+  const {isLogged}: any = useUser()
   const navigate = useNavigate()
 
   useEffect(() => {

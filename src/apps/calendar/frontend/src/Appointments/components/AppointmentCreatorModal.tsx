@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {Input} from "../../shared/components/Input";
 import {useForm} from "../../shared/hooks/UserForm";
 import {v4 as uuidv4} from 'uuid';
-import {useWorkspaceContext} from "../../workspaceContext";
+import {useWorkspaces} from "../../Workspaces/useWorkspaces";
 import {Button} from "../../shared/components/Button";
 
 type Props = {
@@ -21,7 +21,7 @@ export const AppointmentCreatorModal = ({
                                           removeAppointment
                                         }: Props): JSX.Element => {
 
-  const {selectedWorkspace}: any = useWorkspaceContext()
+  const {selectedWorkspace}: any = useWorkspaces()
 
   const initialInputs = {
     id: uuidv4(),
@@ -36,14 +36,14 @@ export const AppointmentCreatorModal = ({
 
   useEffect(() => {
     if (selectedEvent) setInputs(selectedEvent)
-  }, [selectedEvent])
+  }, [selectedEvent, setInputs])
 
   useEffect(() => {
     setInputs({
       ...inputs,
       workspaceId: selectedWorkspace
     })
-  }, [selectedWorkspace]);
+  }, [selectedWorkspace, setInputs, inputs]);
 
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export const AppointmentCreatorModal = ({
       startAt: inputs.startAt,
       endAt: inputs.startAt
     })
-  }, [inputs.startAt]);
+  }, [inputs.startAt, selectedEvent, setInputs, inputs]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

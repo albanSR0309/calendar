@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import {AppointmentsList} from "./AppointmentsList";
-import {useUserContext} from "../../userContetxt";
+import {useUser} from "../../Users/useUser";
 import {useAppointments} from "../useAppointments";
 import {AppointmentCreatorModal} from "./AppointmentCreatorModal";
 import {useCalendar} from "../../Calendar/useCalendar";
-import dayjs from "dayjs";
 
 export const AppointmentsSummary = (): JSX.Element => {
-  const {user}: any = useUserContext()
+  const {user}: any = useUser()
   const {todayAppointments}: any = useAppointments()
   const [createAppointmentModal, setCreateAppointmentModal] = useState(false)
   const {

@@ -3,7 +3,6 @@ header {
   top: 0;
   @include flex-align--center-justify-beetwen();
   min-height: 70px;
-  padding: 0.5rem 1rem;
   background: #fbf7f478;
   backdrop-filter: blur(7px);
 }

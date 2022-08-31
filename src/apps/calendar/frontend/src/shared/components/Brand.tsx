@@ -4,8 +4,8 @@ export const Brand = (): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="36"
-      height="36"
+      width="30"
+      height="30"
       version="1"
       viewBox="0 0 512 512"
       fill="#164951"

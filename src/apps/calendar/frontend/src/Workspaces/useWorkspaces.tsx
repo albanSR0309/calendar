@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
-import {useMutation, useQuery, useQueryClient} from "react-query";
-import {WorkspacesSearcher} from "./repositories/WorkspaceRepository";
-import {useWorkspaceContext} from "../workspaceContext";
-import {useUserContext} from "../userContetxt";
+import React, {useEffect} from 'react';
+import {useMutation, useQuery, useQueryClient} from 'react-query';
+import {WorkspacesSearcher} from './repositories/WorkspaceRepository';
+import {useWorkspaceContext} from '../Contexts/workspaceContext';
+import {useUser} from '../Users/useUser';
 
 export const useWorkspaces = () => {
-  const {user}: any = useUserContext()
+  const {user}: any = useUser()
 
   const {
     workspaces,
