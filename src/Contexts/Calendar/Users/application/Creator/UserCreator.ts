@@ -24,6 +24,12 @@ export class UserCreator {
 
   async run({userId, userName, userEmail, userPassword}: Params): Promise<void> {
 
+    const existUser = await this.repository.findSatisfying(userEmail);
+
+    if (existUser) {
+      throw new Error();
+    }
+
     const user = User.create(userId, userName, userEmail, userPassword);
 
     await this.repository.save(user);

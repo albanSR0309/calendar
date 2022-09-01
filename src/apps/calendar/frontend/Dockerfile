@@ -1,18 +1,19 @@
-FROM node:12
+FROM node:16-alpine as builder
 
-WORKDIR /usr/src/app
-
-#RUN apt-get update && apt-get install -y nginx
-#COPY nginx.conf /etc/nginx/sites-enabled/default
-
-COPY package.json ./
-RUN npm install
+WORKDIR /app
 
 COPY . .
 
-# RUN npm run build
+RUN npm run build
 
-EXPOSE 2000
+FROM nginx:1.21.0-alpine as production
 
-CMD npm start
-# CMD ["nginx", "-g", "daemon off;"]
+ENV NODE_ENV production
+
+COPY --from=builder /app/build /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 3000
+
+CMD ["nginx", "-g", "daemon off;"]

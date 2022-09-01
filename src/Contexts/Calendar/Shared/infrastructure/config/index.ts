@@ -20,7 +20,7 @@ const calendarConfig = convict({
       doc: 'The RabbitMQ connection host',
       format: String,
       env: 'RABBITMQ_HOST',
-      default: 'localhost'
+      default: 'rabbitmq'
     },
     user: {
       doc: 'The RabbitMQ connection user',

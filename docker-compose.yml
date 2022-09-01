@@ -1,26 +1,27 @@
 version: '3.8'
 
-services:
+x-app-service: &default-app
+  build: .
+  command: ''
+  depends_on:
+    - rabbitmq
+  volumes:
+    - .:/code:delegated
+    - node_modules:/code/node_modules:delegated
 
-  calendar-backend:
-    build: .
-    command: bash -c "npm run build && npm run start:calendar:backend"
+services:
+  calendar-app:
+    build: ./src/apps/calendar/frontend
     depends_on:
-      - "rabbitmq"
+      - calendar-backend
     ports:
       - 3000:3000
-    volumes:
-      - .:/code:delegated
 
-  frontend:
-    build: ./src/apps/calendar/frontend
-    environment:
-      CHOKIDAR_USEPOLLING: "true"
-    volumes:
-      - /usr/src/app/node_modules
-      - ./src/apps/calendar/frontend:/usr/src/app
+  calendar-backend:
+    <<: *default-app
+    command: bash -c "npm run build && npm run start:calendar:backend"
     ports:
-      - 2000:2000  
+      - 5000:5000
 
   rabbitmq:
     image: 'rabbitmq:3.8-management'
@@ -30,3 +31,5 @@ services:
 
 volumes:
   node_modules:
+  esdata:
+    driver: local
