@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import {useQuery} from 'react-query';
 import {WorkspacesSearcher} from './repositories/WorkspaceRepository';
 import {useWorkspaceContext} from '../shared/Contexts/workspaceContext';
@@ -18,7 +18,7 @@ export const useWorkspaces = () => {
 
   useEffect(() => {
     setWorkspaces(data);
-  }, [data]);
+  }, [data, setWorkspaces]);
 
   useEffect(() => {
     if (workspaces && !selectedWorkspace) {
