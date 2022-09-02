@@ -28,6 +28,7 @@ export const useWorkspaces = () => {
 
   return {
     workspaces,
+    setWorkspaces,
     selectedWorkspace,
     setSelectedWorkspace
   };
