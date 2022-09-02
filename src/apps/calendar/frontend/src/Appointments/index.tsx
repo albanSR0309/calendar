@@ -1,3 +1,3 @@
-import {AppointmentsSummary} from "./components/AppointmentsSummary";
+import {AppointmentsSummary} from './components/AppointmentsSummary';
 
 export default AppointmentsSummary;

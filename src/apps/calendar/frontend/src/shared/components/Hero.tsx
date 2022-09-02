@@ -1,21 +1,27 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useEffect} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {useUser} from '../../Users/useUser';
 
-type Props = {
-  title: string;
-  caption: string;
-  ariaLabel: string;
-  href: string;
-};
+export const Hero = (): JSX.Element => {
+  const {isLogged}: any = useUser();
+  const navigate = useNavigate();
 
-export const Hero = ({title, caption, ariaLabel, href}: Props): JSX.Element => {
+  useEffect(() => {
+    if (isLogged) {
+      navigate('../calendar');
+    }
+  }, [isLogged, navigate]);
+
   return (
     <div className="hero">
       <div className="container hero-container">
-        <h1>{title}</h1>
-        <p>{caption}</p>
-        <Link to={href}><button className="button button-primary">{ariaLabel}</button></Link>
+        <h1>Take complete control of your personal time.</h1>
+        <p>A simple calendar with workspaces to share appointments with other users</p>
+        <Link to="/calendar">
+          <button className="button button-primary">Get started</button>
+        </Link>
       </div>
     </div>
   );
 };
+

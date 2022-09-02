@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {
   sectionStyles?: string;
   containerStyles?: string;
-  children: any;
+  children: React.ReactNode;
 };
 
 export const Section = ({sectionStyles, containerStyles, children}: Props): JSX.Element => {

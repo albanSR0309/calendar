@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import {Input} from "../../shared/components/Input";
-import {useForm} from "../../shared/hooks/UserForm";
+import {Input} from '../../shared/components/Input';
+import {useForm} from '../../shared/hooks/UserForm';
 import {v4 as uuidv4} from 'uuid';
-import {useWorkspaces} from "../../Workspaces/useWorkspaces";
-import {Button} from "../../shared/components/Button";
+import {useWorkspaces} from '../../Workspaces/useWorkspaces';
+import {Button} from '../../shared/components/Button';
 
 type Props = {
   viewModal: any
@@ -21,7 +21,7 @@ export const AppointmentCreatorModal = ({
                                           removeAppointment
                                         }: Props): JSX.Element => {
 
-  const {selectedWorkspace}: any = useWorkspaces()
+  const {selectedWorkspace}: any = useWorkspaces();
 
   const initialInputs = {
     id: uuidv4(),
@@ -30,41 +30,40 @@ export const AppointmentCreatorModal = ({
     workspaceId: selectedWorkspace,
     startAt: selectedEvent ? selectedEvent.startAt : selectedDay.set('hour', 8).format('YYYY-MM-DDTHH:mm'),
     endAt: selectedEvent ? selectedEvent.endAt : selectedDay.set('hour', 8).format('YYYY-MM-DDTHH:mm'),
-  }
+  };
 
-  const {inputs, setInputs, handleInputChange} = useForm(initialInputs)
+  const {inputs, setInputs, handleInputChange} = useForm(initialInputs);
 
   useEffect(() => {
-    if (selectedEvent) setInputs(selectedEvent)
-  }, [selectedEvent, setInputs])
+    if (selectedEvent) { setInputs(selectedEvent); }
+  }, [selectedEvent, setInputs]);
 
   useEffect(() => {
     setInputs({
       ...inputs,
       workspaceId: selectedWorkspace
-    })
-  }, [selectedWorkspace, setInputs, inputs]);
-
+    });
+  }, [selectedWorkspace]);
 
   useEffect(() => {
     setInputs({
       ...selectedEvent ? selectedEvent : inputs,
       startAt: inputs.startAt,
       endAt: inputs.startAt
-    })
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inputs.startAt, selectedEvent, setInputs]);
+  }, [inputs.startAt]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setAppointments(inputs)
-    viewModal(false)
-  }
+    e.preventDefault();
+    setAppointments(inputs);
+    viewModal(false);
+  };
 
   const handlerRemoveAppointment = () => {
-    removeAppointment(inputs.id)
-    viewModal(false)
-  }
+    removeAppointment(inputs.id);
+    viewModal(false);
+  };
 
   return (
     <div className="modal">
@@ -87,7 +86,7 @@ export const AppointmentCreatorModal = ({
               label="startAt"
               placeholder="Date"
               value={inputs.startAt}
-              onChange={(e: any) => handleInputChange(e)}
+              onChange={handleInputChange}
             />
             <Input
               type="datetime-local"
@@ -95,7 +94,7 @@ export const AppointmentCreatorModal = ({
               placeholder="Date"
               value={inputs.endAt}
               min={inputs.startAt}
-              onChange={(e: any) => handleInputChange(e)}
+              onChange={handleInputChange}
             />
           </div>
 
@@ -104,7 +103,7 @@ export const AppointmentCreatorModal = ({
             name="description"
             placeholder="Description"
             value={inputs.description}
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleInputChange(e)}
             rows={3}/>
           <button type="submit" className="button button-primary">Save Appointment</button>
         </form>

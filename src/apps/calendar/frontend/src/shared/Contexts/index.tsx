@@ -1,15 +1,15 @@
 import React from 'react';
 import {UserProvider} from './userContetxt';
-import {AppointmentsProvider} from "./AppointmentsContext";
-import {WorkspaceProvider} from "./workspaceContext";
-import {NotificationsProvider} from "./notificationsContext";
+import {AppointmentsProvider} from './AppointmentsContext';
+import {WorkspaceProvider} from './workspaceContext';
+import {NotificationsProvider} from './notificationsContext';
 
 type Props = {
-  children: any
+  children: React.ReactNode
 };
 
-export const ContextProviders = ({children}: Props): JSX.Element => {
-  return (
+export const Index = ({children}: Props): JSX.Element =>
+  (
     <UserProvider>
       <NotificationsProvider>
         <WorkspaceProvider>
@@ -20,4 +20,3 @@ export const ContextProviders = ({children}: Props): JSX.Element => {
       </NotificationsProvider>
     </UserProvider>
   );
-};

@@ -1,18 +1,24 @@
 import React, {Fragment} from 'react';
-import {FormHeader} from "./FormHeader";
-import {Input} from "./Input";
-import {Button} from "./Button";
+import {FormHeader} from './FormHeader';
+import {Input} from './Input';
+import {Button} from './Button';
 import {useNotifications} from '../../Notifications/useNotifications';
+
+type Inputs = {
+  type: string;
+  label: string;
+  placeholder: string;
+};
 
 type Props = {
   title: string;
   caption: string;
-  inputs: Array<any>;
+  inputs: Array<Inputs>;
   inputsData: any;
-  handleInputChange: any;
-  handleSubmit: any;
+  handleInputChange: Function;
+  handleSubmit: Function;
   buttonAriaLabel: string;
-  small?: any;
+  small?: JSX.Element;
 };
 
 export const Form = ({
@@ -25,7 +31,7 @@ export const Form = ({
                        buttonAriaLabel,
                        small
                      }: Props): JSX.Element => {
-  const {errorMessage} = useNotifications()
+  const {errorMessage} = useNotifications();
 
   return (
     <Fragment>
@@ -34,15 +40,15 @@ export const Form = ({
         title={title}
         caption={caption}
       />
-      <form onSubmit={(e) => handleSubmit(e)}>
-        {inputs.map((input, idx) => (
+      <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
+        {inputs.map((input, idx: number) => (
           <Input
             key={idx}
             type={input.type}
             label={input.label}
             placeholder={input.placeholder}
             value={inputsData[input.label]}
-            onChange={(e: InputEvent) => handleInputChange(e)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}
           />
         ))}
         <Button

@@ -1,6 +1,10 @@
-import {useState, createContext, useContext} from 'react'
+import {useState, createContext, useContext} from 'react';
 
-const WorkspaceProvider = ({children}: any) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const WorkspaceProvider = ({children}: Props) => {
   const [workspaces, setWorkspaces] = useState();
   const [selectedWorkspace, setSelectedWorkspace] = useState();
 
@@ -13,13 +17,13 @@ const WorkspaceProvider = ({children}: any) => {
     }}>
       {children}
     </WorkspaceContext.Provider>
-  )
-}
+  );
+};
 
-const WorkspaceContext = createContext({})
+const WorkspaceContext = createContext({});
 
 const useWorkspaceContext = () => {
   return useContext(WorkspaceContext);
-}
+};
 
 export {WorkspaceProvider, useWorkspaceContext};

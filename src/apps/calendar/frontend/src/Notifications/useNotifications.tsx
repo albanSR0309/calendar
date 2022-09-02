@@ -1,20 +1,20 @@
-import React, {useEffect} from "react";
-import {useNotificationsContext} from '../Contexts/notificationsContext'
+import React, {useEffect} from 'react';
+import {useNotificationsContext} from '../shared/Contexts/notificationsContext';
 
 export const useNotifications = () => {
-  const {errorMessage, setErrorMessage}: any = useNotificationsContext()
+  const {errorMessage, setErrorMessage}: any = useNotificationsContext();
 
   useEffect(() => {
-    if (errorMessage){
+    if (errorMessage) {
       const timer = setTimeout(() => {
-        setErrorMessage(false)
+        setErrorMessage(false);
       }, 3000);
       return () => clearTimeout(timer);
     }
-  }, [errorMessage]);
+  }, [errorMessage, setErrorMessage]);
 
   return {
     errorMessage,
     setErrorMessage
-  }
-}
+  };
+};

@@ -1,24 +1,27 @@
-import React, {Fragment} from "react";
-import Day from "./Day";
+import React, {Fragment} from 'react';
+import {MonthHeader} from './MonthHeader';
+import {Week} from './Week';
 
-export default function Month({monthId, month, handlerAppointmentCreator, appointments}: any) {
+type Props = {
+  monthId: string;
+  month: Array<any>;
+  handlerAppointmentCreator: Function,
+  appointments: any
+};
+
+export default function Month({monthId, month, handlerAppointmentCreator, appointments}: Props) {
 
   return (
     <Fragment>
-      <div className="month-calendar-header">
-        {month[0].map((day: any, idx: number) => (
-          <div key={idx}>
-            {day.format("dddd")}
-          </div>
-        ))}
-      </div>
+      <MonthHeader month={month[0]}/>
       <div className="month-calendar">
-        {month.map((week: any, i: number) => (
-          <Fragment key={i}>
-            {week.map((day: any, idx: number) => (
-              <Day monthId={monthId} day={day} key={idx} handlerAppointmentCreator={handlerAppointmentCreator} appointments={appointments}/>
-            ))}
-          </Fragment>
+        {month.map((week: Array<any>, idx: number) => (
+          <Week
+            monthId={monthId}
+            week={week}
+            key={idx}
+            handlerAppointmentCreator={handlerAppointmentCreator}
+            appointments={appointments}/>
         ))}
       </div>
     </Fragment>

@@ -1,4 +1,4 @@
-import React, {useState, createContext, useContext} from 'react'
+import React, {useState, createContext, useContext} from 'react';
 
 const AppointmentsProvider = ({children}: any) => {
   const [appointments, setAppointments] = useState([]);
@@ -13,13 +13,13 @@ const AppointmentsProvider = ({children}: any) => {
     }}>
       {children}
     </AppointmentContext.Provider>
-  )
-}
+  );
+};
 
-const AppointmentContext = createContext({})
+const AppointmentContext = createContext({});
 
 const useAppointmentContext = () => {
   return useContext(AppointmentContext);
-}
+};
 
 export {AppointmentsProvider, useAppointmentContext};

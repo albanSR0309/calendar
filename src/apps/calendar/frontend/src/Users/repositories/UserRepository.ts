@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const UserAuthenticator = async (inputs: any) => {
+export const UserAuthenticator = async (inputs: object) => {
   return await axios.post(
     `${process.env.REACT_APP_CALENDAR_BACKEND}/auth`,
     inputs

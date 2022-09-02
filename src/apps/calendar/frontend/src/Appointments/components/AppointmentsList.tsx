@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from "../../shared/components/Card";
+import {Card} from '../../shared/components/Card';
 
 type Props = {
   appointments: Array<object>;
@@ -7,9 +7,9 @@ type Props = {
   onClick: any;
 };
 
-export const AppointmentsList = ({appointments, emptyDataMessage, onClick}: Props): JSX.Element => {
+export const AppointmentsList = ({appointments, emptyDataMessage, onClick}: Props): JSX.Element =>
 
-  return (
+  (
     <div className="cards-list">
       {!appointments?.length && emptyDataMessage && <p>{emptyDataMessage}</p>}
       {appointments && appointments.map((appointment: any) => (
@@ -23,4 +23,3 @@ export const AppointmentsList = ({appointments, emptyDataMessage, onClick}: Prop
       ))}
     </div>
   );
-};

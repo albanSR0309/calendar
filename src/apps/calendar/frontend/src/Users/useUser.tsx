@@ -1,4 +1,4 @@
-import {useUserContext} from "../Contexts/userContetxt";
+import {useUserContext} from '../shared/Contexts/userContetxt';
 
 export const useUser = () => {
   const {user, setUser, isLogged, setIsLogged}: any = useUserContext();
@@ -8,5 +8,5 @@ export const useUser = () => {
     setUser,
     isLogged,
     setIsLogged
-  }
-}
+  };
+};

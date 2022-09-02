@@ -2,12 +2,11 @@ import React from 'react';
 import {Navbar} from './shared/components/Navbar';
 import {routes} from './routes';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {ContextProviders} from './Contexts/ContextProviders';
+import {Index} from './shared/Contexts';
 
 const App = (): JSX.Element => {
-
   return (
-    <ContextProviders>
+    <Index>
       <BrowserRouter>
         <Navbar/>
         <Routes>
@@ -20,8 +19,8 @@ const App = (): JSX.Element => {
           ))}
         </Routes>
       </BrowserRouter>
-    </ContextProviders>
+    </Index>
   );
-}
+};
 
 export default App;

@@ -1,34 +1,36 @@
 import React, {useEffect} from 'react';
-import {Link, useNavigate} from "react-router-dom";
-import {useForm} from "../../shared/hooks/UserForm";
-import {useUser} from "../../Users/useUser";
-import {useAuthentication} from "../useAuthentication";
+import {Link, useNavigate} from 'react-router-dom';
+import {useForm} from '../../shared/hooks/UserForm';
+import {useUser} from '../../Users/useUser';
+import {useAuthentication} from '../useAuthentication';
 import {v4 as uuidv4} from 'uuid';
-import {Section} from "../../shared/components/Section";
-import {Form} from "../../shared/components/Form";
+import {Section} from '../../shared/components/Section';
+import {Form} from '../../shared/components/Form';
 
-const INITIAL_INPUTS = {id: uuidv4(), name: '', email: '', password: ''}
+const INITIAL_INPUTS = {id: uuidv4(), name: '', email: '', password: ''};
 
 const SIGNUP_FORM_INPUTS = [
   {type: 'text', label: 'name', placeholder: 'Name'},
   {type: 'email', label: 'email', placeholder: 'Email'},
   {type: 'password', label: 'password', placeholder: 'Password'},
-]
+];
 
 export const SignUp = (): JSX.Element => {
-  const navigate = useNavigate()
-  const {inputs, handleInputChange} = useForm(INITIAL_INPUTS)
-  const {isLogged}: any = useUser()
-  const {userCreator} = useAuthentication()
+  const navigate = useNavigate();
+  const {inputs, handleInputChange} = useForm(INITIAL_INPUTS);
+  const {isLogged}: any = useUser();
+  const {userCreator} = useAuthentication();
 
   useEffect(() => {
-    if (isLogged) navigate('../calendar')
+    if (isLogged) {
+      navigate('../calendar');
+    }
   }, [isLogged, navigate]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    userCreator(inputs.id, inputs)
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    userCreator(inputs.id, inputs);
+  };
 
   return (
     <Section

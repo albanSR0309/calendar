@@ -6,7 +6,7 @@ type Props = {
   placeholder: string;
   value: string;
   min?: string;
-  onChange: any;
+  onChange: Function;
 };
 
 export const Input = ({type, label, placeholder, value, min, onChange}: Props): JSX.Element => {
@@ -18,7 +18,7 @@ export const Input = ({type, label, placeholder, value, min, onChange}: Props): 
         placeholder={placeholder}
         value={value}
         min={min}
-        onChange={(e) => onChange(e)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)}
       />
   );
 };

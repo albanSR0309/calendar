@@ -1,4 +1,4 @@
-import {useState, createContext, useContext, useEffect} from 'react'
+import {useState, createContext, useContext} from 'react';
 
 const NotificationsProvider = ({children}: any) => {
   const [errorMessage, setErrorMessage] = useState(false);
@@ -10,13 +10,12 @@ const NotificationsProvider = ({children}: any) => {
     }}>
       {children}
     </NotificationsContext.Provider>
-  )
-}
+  );
+};
 
-const NotificationsContext = createContext({})
+const NotificationsContext = createContext({});
 
-const useNotificationsContext = () => {
-  return useContext(NotificationsContext);
-}
+const useNotificationsContext = () =>
+  useContext(NotificationsContext);
 
 export {NotificationsProvider, useNotificationsContext};
