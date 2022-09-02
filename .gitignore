@@ -5,3 +5,4 @@ logs/
 src/Contexts/Calendar/Appointments/infrastructure/persistence/events.*
 data
 test-results.xml
+.idea

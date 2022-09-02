@@ -14,7 +14,7 @@ export class MongoWorkspaceRepository extends MongoRepository<Workspace> impleme
     const documents = await collection.find({userId: userId.value}).toArray();
 
     return documents.length ? documents.map((document: any) => Workspace.fromPrimitives({
-      ...document, id: document._id
+      ...document, id: document.workspace
     })) : null;
   }
 
